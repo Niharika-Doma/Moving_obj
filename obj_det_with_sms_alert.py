@@ -5,10 +5,10 @@ from twilio.rest import Client
 import time
 
 # Twilio configuration
-account_sid = 'ACb10de3c28e38fa2b7edbd500b94dc89c'
-auth_token = 'edd272172fe0c482aaf1704053252d7c'
-twilio_phone_number = '+17626758416'  # Your Twilio phone number
-recipient_phone_number = '+919959068500'  # The phone number to receive alerts
+account_sid = 'accnt num'
+auth_token = 'code'
+twilio_phone_number = 'phn'  # Your Twilio phone number
+recipient_phone_number = 'phn'  # The phone number to receive alerts
 
 client = Client(account_sid, auth_token)
 
