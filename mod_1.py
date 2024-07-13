@@ -4,7 +4,7 @@ import pygame
 
 #loading music for alert sound
 pygame.mixer.init()
-pygame.mixer.music.load("C:/Users/Dell/Desktop/Group project/beep-04.wav")
+pygame.mixer.music.load("C:/Users/msvar/Desktop/Junk/Group_Project/beep-04.wav")
 
 
 
