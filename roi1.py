@@ -1,5 +1,11 @@
 import cv2
 import numpy as np
+import pygame
+
+#loading the sound file
+pygame.mixer.init()
+pygame.mixer.music.load("C:/Users/msvar/Desktop/Junk/Group_Project/beep-04.wav")
+
 
 # Initialize the video capture
 cap = cv2.VideoCapture(0)  # Use 0 for webcam, or provide a video file path
@@ -43,6 +49,8 @@ while True:
     # Draw ROI
     cv2.polylines(frame, [np.array(roi)], True, (0, 255, 0), 2)
 
+   
+    
     alert = False
     for contour in contours:
         if cv2.contourArea(contour) > 500:  # Adjust this value to filter out small movements
@@ -50,9 +58,11 @@ while True:
             if point_inside_polygon(x + w//2, y + h//2, roi):
                 cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 0, 255), 2)
                 alert = True
+                 
 
     if alert:
         cv2.putText(frame, "ALERT!", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
+        
 
     # Display the frame
     cv2.imshow('Frame', frame)
